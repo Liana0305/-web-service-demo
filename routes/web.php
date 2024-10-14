@@ -24,3 +24,13 @@ Route::get('/hello', function () {
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::post('/contact', function (Illuminate\Http\Request $request) {
+    // Logika untuk menangani pengiriman form kontak
+    return back()->with('success', 'Your message has been sent!');
+});
+
